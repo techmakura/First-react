@@ -1,6 +1,6 @@
 import NavbarItem from "./navbarItem";
 
-const Navbar = () =>{
+const Navbar = () => {
     return(
         <nav>
             <ul>

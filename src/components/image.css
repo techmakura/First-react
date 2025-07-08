@@ -1,0 +1,12 @@
+img.image-component{
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 40px;
+    transition: border-radius 3s;
+}
+
+img.image-component:hover{
+    border-radius: 50px;
+    transition: border-radius 3s;
+}
