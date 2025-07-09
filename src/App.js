@@ -1,5 +1,6 @@
 import './App.css';
-import Image from './components/image';
+import Counter from './components/counter';
+// import Image from './components/image';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       {/* Component can take data, manupulate data & return html */}
       <h1>We are using reuseable component</h1>
       
-      <Image 
+      {/* <Image 
         src="https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
         alt="AI"
         width="160px"
@@ -35,7 +36,14 @@ function App() {
         width="500px"
         height="500px"
         // style={{border: "1px solid red"}}
-      />
+      /> */}
+
+
+
+      <h3>State</h3>
+      <p> At any period of time the value of any variable is known as state</p>
+
+      <Counter />
 
     </div>
   );
