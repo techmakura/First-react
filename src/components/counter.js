@@ -4,49 +4,66 @@ import { useState } from "react";
 const Counter = () => {
     // let counter = 1;
     // let username = "";
-    let state = {
-        "username":"",
-        "password":"",
-        "email":"",
-    }
+    // let state = {
+    //     "username":"",
+    //     "password":"",
+    //     "email":"",
+    // }
 
-    const [counter, setCounter] = useState(5);
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    // const [counter, setCounter] = useState(5);
+    // const [username, setUsername] = useState("");
+    // const [password, setPassword] = useState("");
+    // const [email, setEmail] = useState("");
+
+
+    const [state, setState] = useState({
+        "email":"",
+        "password":"",
+        "username":"",
+        "phone":"",
+        "gender":""
+    })
 
     // Declaring the variable
 
     // Counter is variable where we will store the state
     // setCounter is a function we will use to change the value of counter, it is also known as setter. 
 
-    const handleIncreaseCounter = (event) => {
-        // counter++;
-        setCounter(counter + 1);
-    }
+    // const handleIncreaseCounter = (event) => {
+    //     // counter++;
+    //     setCounter(counter + 1);
+    // }
 
-    const handleDecreaseCounter = (event) => {
-        setCounter(counter - 1);
-    }
+    // const handleDecreaseCounter = (event) => {
+    //     setCounter(counter - 1);
+    // }
 
-    const handleInputChange = (event) => {
-        const usernameValue = event.target.value;
+    // const handleInputChange = (event) => {
+    //     const usernameValue = event.target.value;
+    //     setUsername(usernameValue);
+    // }
 
-        setUsername(usernameValue);
+    // const handlePasswordChange = (event) => {
+    //     const passwordValue = event.target.value;        
+    //     setPassword(passwordValue);
+    // }
 
-        state = { ...state, username: usernameValue}
-        console.log("state: ", state);
-    }
+    // const handleEmailChange = (event) => {
+    //     const emailValue = event.target.value;        
+    //     setEmail(emailValue);
+    // }
 
-    const handlePasswordChange = (event) => {
-        const passwordValue = event.target.value;
-        state = { ...state, password: passwordValue}
-        console.log("state: ", state);
-        setPassword(passwordValue);
+    const handleStateChange = (event) =>{
+        const name = event.target.name;
+        const value = event.target.value;
+
+        const newState = {...state, [name]:value}
+        setState(newState);
     }
 
     return(
         <div>
-            <div>Counter value: {counter} </div>
+            {/* <div>Counter value: {counter} </div>
             
             <button 
                 onClick={handleIncreaseCounter}>
@@ -56,17 +73,20 @@ const Counter = () => {
             <button 
                 onClick={handleDecreaseCounter}>
                     Decrease
-            </button>
+            </button> */}
 
             <div>
-                <div>Username typed: {username}</div>
-                <div>password typed: {password}</div>
+                <div>Username typed: {state.username}</div>
+                <div>password typed: {state.password}</div>
+                <div>Email typed: {state.email}</div>
+                <div>phone typed: {state.phone}</div>
+                <div>gender typed: {state.gender}</div>
                 
                 <input 
                     type="text" 
                     name="username" 
                     placeholder="Enter your username" 
-                    onChange={handleInputChange} 
+                    onChange={handleStateChange} 
                 />
             </div>
 
@@ -75,12 +95,53 @@ const Counter = () => {
                     type="password" 
                     name="password" 
                     placeholder="Enter your password" 
-                    onChange={handlePasswordChange} 
+                    onChange={handleStateChange} 
                 />
             </div>
 
-            <h6>React provides us inbuilt function called react hooks. 
-            useState = This react hooks is used to manage the state</h6>
+            <div>
+                <input 
+                    type="text" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    onChange={handleStateChange} 
+                />
+            </div>
+
+            <div>
+                <input 
+                    type="text" 
+                    name="phone" 
+                    placeholder="Enter your phone" 
+                    onChange={handleStateChange} 
+                />
+            </div>
+
+            <div>
+                <input 
+                    type="text" 
+                    name="gender" 
+                    placeholder="Enter your gender" 
+                    onChange={handleStateChange} 
+                />
+            </div>
+
+            <div>
+                Male:
+                <input 
+                    type="radio" 
+                    name="gender" 
+                    value="male" 
+                    onChange={handleStateChange} 
+                />
+                Female;
+                <input
+                    type="radio" 
+                    name="gender" 
+                    value="female" 
+                    onChange={handleStateChange} 
+                />
+            </div>
 
         </div>
     )
