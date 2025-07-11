@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from './components/counter';
+import ExternalCall from './components/externalCall';
 import Image from './components/image';
 
 function App() {
@@ -36,8 +37,6 @@ function App() {
         // style={{border: "1px solid red"}}
       /> */}
 
-      Rest & spread operator (...)
-
       {/* <Image
         src="https://images.unsplash.com/photo-1464865885825-be7cd16fad8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="books"
@@ -54,7 +53,9 @@ function App() {
       {/* <h3>State</h3>
       <p> At any period of time the value of any variable is known as state</p> */}
 
-      <Counter />
+      {/* <Counter /> */}
+
+      <ExternalCall />
 
     </div>
   );

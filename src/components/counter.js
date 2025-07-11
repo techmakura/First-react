@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // We need to import useState hooks because it is provided by react.
 
 const Counter = () => {
@@ -15,14 +15,6 @@ const Counter = () => {
     // const [password, setPassword] = useState("");
     // const [email, setEmail] = useState("");
 
-
-    const [state, setState] = useState({
-        "email":"",
-        "password":"",
-        "username":"",
-        "phone":"",
-        "gender":""
-    })
 
     // Declaring the variable
 
@@ -53,6 +45,16 @@ const Counter = () => {
     //     setEmail(emailValue);
     // }
 
+    const [apiData, setApiData] = useState([]);
+
+    const [state, setState] = useState({
+        "email":"",
+        "password":"",
+        "username":"",
+        "phone":"",
+        "gender":""
+    })
+
     const handleStateChange = (event) =>{
         const name = event.target.name;
         const value = event.target.value;
@@ -60,6 +62,28 @@ const Counter = () => {
         const newState = {...state, [name]:value}
         setState(newState);
     }
+
+    const getData = async () => {
+    const url = "https://api.restful-api.dev/objects";
+
+        try {
+            const response = await fetch(url);
+
+            console.log("response: " + response);
+            if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+            }
+
+            const json = await response.json();
+            console.log(json);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
+    useEffect(()=>{
+        getData();
+    },[])
 
     return(
         <div>
