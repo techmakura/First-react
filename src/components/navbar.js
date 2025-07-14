@@ -1,4 +1,5 @@
 import NavbarItem from "./navbarItem";
+import "./navbar.css";
 
 const Navbar = () => {
     return(
@@ -6,6 +7,8 @@ const Navbar = () => {
             <ul>
                 <NavbarItem title="home" />
                 <NavbarItem title="contact" />
+                <NavbarItem title="dashboard" />
+                <NavbarItem title="about" />
             </ul>
         </nav>
     )

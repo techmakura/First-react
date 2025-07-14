@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
+
 const NavbarItem = ({title}) =>{
     return(
         <>
-            <li>{title}</li>
+            <li>
+                <Link to={`/${title == "home" ? "" : title}`}>
+                    {title}
+                </Link>
+            </li>
         </>
     )
 }

@@ -1,7 +1,9 @@
 import './App.css';
+import Card from './components/card';
 import Counter from './components/counter';
 import ExternalCall from './components/externalCall';
 import Image from './components/image';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
   return (
@@ -55,7 +57,6 @@ function App() {
 
       {/* <Counter /> */}
 
-      <ExternalCall />
 
     </div>
   );
