@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import "./externalcall.css";
 import { Link } from "react-router-dom";
+import Navbar from "../components/navbar";
 
-const ExternalCall = () => {
+const Coffee = () => {
+
 
     const [state, setState] = useState([]);
     const [error, setError] = useState("");
 
     const getData = async () => {
-        const url = "https://api.restful-api.dev/objects";
+        const url = "https://api.sampleapis.com/coffee/hot";
         // Storing url in variable
 
         try {
@@ -17,7 +18,7 @@ const ExternalCall = () => {
             // Await is used to handle asynchronouscall
 
             console.log("response: " + response);
-            
+
             if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
             }
@@ -26,7 +27,7 @@ const ExternalCall = () => {
             // Store the response of api in our state hoooks
             setState(json);
             console.log(json);
-        } 
+        }
         catch (error) {
             setError(error.message);
             console.error("error aayo haii " + error.message);
@@ -37,31 +38,23 @@ const ExternalCall = () => {
         getData();
     }, [])
 
+
     return (
-        <>
-            {state.length > 0 ? 
-            state.map((value, index)=>(
-                <div className="card" key={index}>
-                    <div className="card-title">
-                        <Link to={`/contact/${value.id}`}>
-                            {value.name}
+        <div className="coffee-list-wrapper">
+            <Navbar />
+            {state.map((value, index)=>(
+                <ul>
+                    <li>
+                        <Link to={`/coffee/${value.id}`} key={index}>
+                            <div className="coffee-name">
+                                {value.title}
+                            </div>
                         </Link>
-                    </div>
-                    {value.data?
-                        (<div className="card-details">
-                            <div className="card-color">{value.data.color}</div>
-                            <div className="card-capacity">{value.data.capacity}</div>
-                        </div>)
-                    :
-                    <></>}
-                </div>
-            )) 
-            :(<>
-            <div>{error}</div>
-                </>) 
-            }
-        </>
+                    </li>
+                </ul>
+            ))}
+        </div>
     )
 }
 
-export default ExternalCall;
+export default Coffee;

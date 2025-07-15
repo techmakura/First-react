@@ -1,3 +1,4 @@
+import ExternalCall from "../components/externalCall";
 import Navbar from "../components/navbar";
 
 const ContactPage = () => {
@@ -5,6 +6,7 @@ const ContactPage = () => {
         <>
             <Navbar />
             <div>Contact Page</div>
+            <ExternalCall />
         </>
         
     )

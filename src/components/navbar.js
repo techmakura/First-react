@@ -6,9 +6,7 @@ const Navbar = () => {
         <nav>
             <ul>
                 <NavbarItem title="home" />
-                <NavbarItem title="contact" />
-                <NavbarItem title="dashboard" />
-                <NavbarItem title="about" />
+                <NavbarItem title="coffee" />
             </ul>
         </nav>
     )

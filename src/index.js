@@ -10,12 +10,18 @@ import Dashboard from "./pages/dashboard";
 import Contact from "./pages/contact";
 import AboutUs from "./pages/about";
 import NotFound from './pages/notfound';
+import ExternalCallItem from './components/externalCallItem';
+import Coffee from './pages/coffee';
+import CoffeeItems from './pages/coffeeItems';
 
 const router = createBrowserRouter([
   {path:"/", element: <HomePage />},
   {path:"/dashboard", element: <Dashboard />},
   {path:"/contact", element: <Contact />},
-  {path:"/about", element: <AboutUs />},
+  {path:"/contact/:id", element: <ExternalCallItem />},
+  {path:"/about", element: <Coffee />},
+  {path:"/coffee", element: <Coffee />},
+  {path:"/coffee/:id", element: <CoffeeItems />},
   {path:"*", element:<NotFound />}
 ]);
 

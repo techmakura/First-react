@@ -1,0 +1,39 @@
+.image img{
+    object-fit: cover;
+    text-align: center;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.description{
+    font-size: 14px;
+    color: #333;
+    padding: 15px;
+}
+
+.ingredients{
+    font-size: 12px;
+}
+
+ul{
+    flex-direction: column;
+    color: #646464;
+    font-size: 12px;
+    list-style-type: circle;
+}
+
+nav ul{
+    flex-direction: row;
+    list-style-type: none;
+}
